@@ -25,7 +25,7 @@ from .visao.Pet_View import Pet_View
     Application wide 404 error handler
 """
 
-appbuilder.add_view(Especie_View             , "Especie"               , icon="fa-book", category="Cadastros Básicos"          , category_icon='fa-envelope')
+appbuilder.add_view(Especie_View             , "Espécie"               , icon="fa-book", category="Cadastros Básicos"          , category_icon='fa-envelope')
 appbuilder.add_view(Raca_View                , "Raça"                  , icon="fa-book", category="Cadastros Básicos"          , category_icon='fa-envelope')
 appbuilder.add_view(Vacina_View              , "Vacina"                , icon="fa-book", category="Cadastros Básicos"          , category_icon='fa-envelope')
 appbuilder.add_view(Cliente_View             , "Cliente"               , icon="fa-user ", category="Cadastro de Clientes"          , category_icon='fa-envelope')
