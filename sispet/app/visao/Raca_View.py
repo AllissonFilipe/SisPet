@@ -3,6 +3,7 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView
 from app import appbuilder, db
 from ..modelo.Raca import Raca
+from ..validacoes import ValidaObrigatorio
 
 
 class Raca_View(ModelView):
@@ -35,6 +36,9 @@ class Raca_View(ModelView):
                       'changed_on'                           : 'Data da Ultima Alteração',
                       'changed_by'                           : 'Alterado por',
     }
+
+    validators_columns = { 'especie'            : [  ValidaObrigatorio()  ] }
+
     show_fieldsets = [('Dados Básicos da Categoria',
                        {'fields':show_columns,'expanded':True}),
                       ('Informações de Auditoria',

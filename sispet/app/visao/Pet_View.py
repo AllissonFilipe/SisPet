@@ -5,6 +5,7 @@ from app import appbuilder, db
 from ..modelo.Pet import Pet
 from ..modelo.Especie import Especie
 from flask_appbuilder.models.sqla.filters import FilterEqual
+from ..validacoes import ValidaObrigatorio
 
 
 class Pet_View(ModelView):
@@ -48,6 +49,9 @@ class Pet_View(ModelView):
                       'changed_by'                           : 'Alterado por',
     }
 
+    validators_columns = { 'cliente'            : [  ValidaObrigatorio()  ],
+                           'especie'            : [ ValidaObrigatorio() ],
+                           'raca'               : [ ValidaObrigatorio() ] }
 
     show_fieldsets = [('Dados Básicos da Categoria',
                        {'fields':show_columns,'expanded':True}),
